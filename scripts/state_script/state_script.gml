@@ -24,26 +24,27 @@ function player_states() {
 }
 
 
-
 function state_idle() {
 
-    var mx = keyboard_check(vk_right) - keyboard_check(vk_left);
+    var mx = key_right - key_left;
     hsp = mx * global.PLAYER_SPEED;
-
+	
+	if (mx != 0) facing_dir = mx; //Animaiton Facing Check
+	
     if (mx != 0) {
         state = "walk";
         state_timer = 0;
         return;
     }
 
-    if (keyboard_check_pressed(vk_space) && on_ground) {
+    if (key_jump && on_ground) {
         vsp = global.PLAYER_JUMP;
         state = "jump";
         state_timer = 0;
         return;
     }
 
-    if (keyboard_check_pressed(ord("F"))) {
+    if (key_kick) {
         state = "kick";
         state_timer = 0;
         return;
@@ -52,9 +53,10 @@ function state_idle() {
 
 function state_walk() {
 
-    var mx = keyboard_check(vk_right) - keyboard_check(vk_left);
+    var mx = key_right - key_left;
     hsp = mx * global.PLAYER_SPEED;
-
+	
+	if (mx != 0) facing_dir = mx; // Animation Check
 
     if (mx == 0) {
         state = "idle";
@@ -63,7 +65,7 @@ function state_walk() {
     }
 
 
-    if (keyboard_check_pressed(vk_space) && on_ground) {
+    if (key_jump && on_ground) {
         vsp = global.PLAYER_JUMP;
         state = "jump";
         state_timer = 0;
@@ -71,7 +73,7 @@ function state_walk() {
     }
 
 
-    if (keyboard_check_pressed(ord("F"))) {
+    if (key_kick) {
         state = "kick";
         state_timer = 0;
         return;
@@ -80,13 +82,11 @@ function state_walk() {
 	
 function state_jump() {
 
-
-    var mx = keyboard_check(vk_right) - keyboard_check(vk_left);
+    var mx = key_right - key_left;
     hsp = mx * global.PLAYER_SPEED;
 
-
-    if (on_ground && vsp == 0) {
-        state = "idle";
+    if (on_ground) {
+        state = (mx == 0) ? "idle" : "walk";
         state_timer = 0;
         return;
     }
@@ -94,7 +94,7 @@ function state_jump() {
 	
 function state_kick() {
 
-    hsp = global.KICK_FORCE * (keyboard_check(vk_right) - keyboard_check(vk_left));
+    hsp = global.KICK_FORCE * facing_dir;
 
 
     if (state_timer > 10) {
