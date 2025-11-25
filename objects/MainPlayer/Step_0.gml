@@ -1,38 +1,29 @@
-/// tile_solid_at(tilemap_id, x, y)
-function tile_solid_at(_tilemap, _x, _y) {
-    var tile = tilemap_get_at_pixel(_tilemap, _x, _y);
-    return tile != 0;
-}
-
-
-
-
-
 vsp += global.GRAVITY;
 
 player_states();
 
 
-// ----- HORIZONTAL COLLISION -----
-if (tile_solid_at(Main_Tile, x + hsp, y)) {
-    while (!tile_solid_at(Main_Tile, x + sign(hsp), y)) {
+var collision_source = Collission_Object; 
+
+if (place_meeting(x + hsp, y, collision_source)) {
+
+    while (!place_meeting(x + sign(hsp), y, collision_source)) {
         x += sign(hsp);
     }
-    hsp = 0;
+    hsp = 0; 
 }
-x += hsp;
+x += hsp; 
 
 
-// ----- VERTICAL COLLISION -----
-if (tile_solid_at(Main_Tile, x, y + vsp)) {
-    while (!tile_solid_at(Main_Tile, x, y + sign(vsp))) {
+if (place_meeting(x, y + vsp, collision_source)) {
+
+    while (!place_meeting(x, y + sign(vsp), collision_source)) {
         y += sign(vsp);
     }
-    vsp = 0;
+    vsp = 0; 
 }
 y += vsp;
 
-
 // grounded?
-on_ground = tile_solid_at(Main_Tile, x, y + 1);
-
+// Cek apakah ada Objek Dinding 1 piksel di bawah pemain
+on_ground = place_meeting(x, y + 1, collision_source);

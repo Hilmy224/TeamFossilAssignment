@@ -2,12 +2,13 @@
   "FolderOrderSettings":[
     {"name":"Characther","order":1,"path":"folders/Characther.yy",},
     {"name":"Light","order":1,"path":"folders/Characther/Light.yy",},
-    {"name":"up","order":6,"path":"folders/Characther/Light/up.yy",},
     {"name":"left","order":4,"path":"folders/Characther/Light/left.yy",},
     {"name":"right","order":5,"path":"folders/Characther/Light/right.yy",},
+    {"name":"up","order":6,"path":"folders/Characther/Light/up.yy",},
     {"name":"TiileSet","order":2,"path":"folders/TiileSet.yy",},
   ],
   "ResourceOrderSettings":[
+    {"name":"Collission_Object","order":4,"path":"objects/Collission_Object/Collission_Object.yy",},
     {"name":"custom_camera","order":2,"path":"objects/custom_camera/custom_camera.yy",},
     {"name":"MainPlayer","order":2,"path":"objects/MainPlayer/MainPlayer.yy",},
     {"name":"obj_circle","order":2,"path":"objects/obj_circle/obj_circle.yy",},
@@ -41,6 +42,7 @@
     {"name":"uls_set_particle_enable","order":2,"path":"scripts/uls_set_particle_enable/uls_set_particle_enable.yy",},
     {"name":"sh_gaussian_blur_v","order":1,"path":"shaders/sh_gaussian_blur_v/sh_gaussian_blur_v.yy",},
     {"name":"background","order":3,"path":"sprites/background/background.yy",},
+    {"name":"Collision_Sprite","order":2,"path":"sprites/Collision_Sprite/Collision_Sprite.yy",},
     {"name":"Player_jump_light_l","order":1,"path":"sprites/Player_jump_light_l/Player_jump_light_l.yy",},
     {"name":"Player_jump_light_r","order":1,"path":"sprites/Player_jump_light_r/Player_jump_light_r.yy",},
     {"name":"Player_jump_light_u","order":1,"path":"sprites/Player_jump_light_u/Player_jump_light_u.yy",},
@@ -58,5 +60,6 @@
     {"name":"spr_slope","order":1,"path":"sprites/spr_slope/spr_slope.yy",},
     {"name":"spr_triangle","order":2,"path":"sprites/spr_triangle/spr_triangle.yy",},
     {"name":"Sprite12","order":1,"path":"sprites/Sprite12/Sprite12.yy",},
+    {"name":"Collision_TIle","order":3,"path":"tilesets/Collision_TIle/Collision_TIle.yy",},
   ],
 }
