@@ -23,8 +23,12 @@ function player_animations() {
     }
 
 	//Should flip on this
-    if (hsp != 0)
-        image_xscale = sign(hsp);
+    if (hsp != 0){
+		if(state!="kick"){
+			image_xscale = sign(hsp);
+		}else{
+			image_xscale = facing_dir;
+		}}
     else
         image_xscale = facing_dir;
 }

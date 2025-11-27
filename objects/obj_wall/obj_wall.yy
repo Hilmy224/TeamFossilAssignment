@@ -13,7 +13,7 @@
     "name":"obj_uls_collider",
     "path":"objects/obj_uls_collider/obj_uls_collider.yy",
   },
-  "persistent":false,
+  "persistent":true,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
   "physicsFriction":0.2,

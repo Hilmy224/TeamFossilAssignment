@@ -90,14 +90,21 @@ function state_jump() {
         state_timer = 0;
         return;
     }
+	if (key_kick) {
+    state = "kick";
+    state_timer = 0;
+    return;
+	}
 }
 	
 function state_kick() {
+	
+	if(kicked_kb)
+		hsp = global.KICK_FORCE * facing_dir;
+		vsp = -global.KICK_FORCE * 0.5
 
-    hsp = global.KICK_FORCE * facing_dir;
-
-
-    if (state_timer > 10) {
+	//Frame Managing
+    if (state_timer > 15) {
         state = on_ground ? "idle" : "jump";
         state_timer = 0;
         return;

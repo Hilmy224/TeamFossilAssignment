@@ -12,7 +12,10 @@
     "name":"Characther",
     "path":"folders/Characther.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"Light_Overlpa",
+    "path":"objects/Light_Overlpa/Light_Overlpa.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
