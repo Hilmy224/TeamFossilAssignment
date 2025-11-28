@@ -81,6 +81,7 @@
     {"id":{"name":"StartingRoom","path":"rooms/StartingRoom/StartingRoom.yy",},},
     {"id":{"name":"TempWinRoom","path":"rooms/TempWinRoom/TempWinRoom.yy",},},
     {"id":{"name":"RoomUI","path":"roomui/RoomUI/RoomUI.yy",},},
+    {"id":{"name":"InventoryScript","path":"scripts/InventoryScript/InventoryScript.yy",},},
     {"id":{"name":"load_global_vars","path":"scripts/load_global_vars/load_global_vars.yy",},},
     {"id":{"name":"scr_castshadow","path":"scripts/scr_castshadow/scr_castshadow.yy",},},
     {"id":{"name":"scr_define_corners","path":"scripts/scr_define_corners/scr_define_corners.yy",},},
